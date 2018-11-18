@@ -52,7 +52,7 @@ import {IonicStorageModule} from "@ionic/storage";
     SplashScreen,
     LanguageProvider,
     {provide: ErrorHandler,
-    useClass: IonicErrorHandler}
+    useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

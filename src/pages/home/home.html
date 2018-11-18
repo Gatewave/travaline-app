@@ -102,13 +102,14 @@
 
     <ion-row padding-top id="Packages">
         <ion-col margin-bottom>
-            <p class="bar">
-            <span text-right>{{'home.titleBar.italy' | translate}}</span>
-            <span float-left>{{'home.titleBar.seeMore' | translate}}</span>
-            </p>
+            <div class="bar">
+            <h2>{{'home.titleBar.italy' | translate}}</h2>
+            <a href="#">{{'home.titleBar.seeMore' | translate}}</a>
+            </div>
         <ion-slides>
             <ion-slide *ngFor="let package of packagesA">
                <ion-card no-padding no-margin>
+                   <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
                    <img [src]="package.image" class="slide-image"/>
                    <ion-card-content>
                        <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>
@@ -120,13 +121,14 @@
         </ion-col>
 
         <ion-col>
-            <p class="bar">
-                <span float-right text-right>{{'home.titleBar.france' | translate}}</span>
-                <span float-left>{{'home.titleBar.seeMore' | translate}}</span>
-            </p>
+            <div class="bar">
+                <h2>{{'home.titleBar.france' | translate}}</h2>
+                <a  href="#">{{'home.titleBar.seeMore' | translate}}</a>
+            </div>
             <ion-slides>
                 <ion-slide *ngFor="let package of packagesB">
                     <ion-card>
+                        <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
                         <img [src]="package.image" class="slide-image"/>
                         <ion-card-content>
                             <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>

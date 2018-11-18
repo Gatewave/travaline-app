@@ -89,22 +89,39 @@ page-home {
       }
 
     }
+
     ion-row[id="Packages"] {
       ion-col{
-        p.bar{
+        div.bar{
+          display: flex !important;
+          justify-content: space-between!important;
           border-bottom: 1px solid color($colors, overlay);
           margin: 0;
           color:color($colors, dark) ;
-          span:first-child{
+          h2{
             font-weight: 600;
             font-size: 15px;
           }
-          span:last-child{
+          a{
             font-weight: 600;
             font-size: 11px;
           }
         }
       }
+    }
+    ion-icon[ios="ios-heart"] {
+      display: inline-block;
+      font-size: 1.6em;
+      position: absolute;
+      right: 18px;
+      top: 30px;
+      padding: 5px;
+      width: 30px;
+      color: #ecf0f1;
+      height: 30px;
+      background: #d452c3;
+      text-align: center;
+      border-radius: 50%;
     }
   }
 }
