@@ -1,0 +1,110 @@
+page-home {
+  font-family: 'Cairo', sans-serif !important;
+  background-color: color($colors,danger) !important;
+  height: 100vh !important;
+  .header-md::after,
+  .header-ios::after {
+    background-image: none !important;
+  }
+  ion-header {
+    ion-title {
+      text-align: center;
+      img {
+        display: inline-block;
+        width: 50%;
+      }
+    }
+    .toolbar-title.toolbar-title-ios{
+      img {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+  ion-content {
+    background: url("../../assets/imgs/pattern.png") no-repeat no-repeat left bottom !important;
+    ion-row#SearchPro {
+      background-color: color($colors,overlayApp);
+      border-radius: 6px!important;
+      padding: 10px;
+      ion-list {
+        margin-bottom: 0!important;
+        ion-item, .item-ios {
+          border-radius: 6px!important;
+          box-shadow: 1px 1px 1px rgba(86, 86, 86, 0.56) !important;
+          font-size: 0.9em !important;
+          min-height: 36px !important;
+          font-weight: 500 !important;
+          border: 1px solid #fff;
+          background-color: transparent;
+          color:color($colors,white);
+          ion-input, .text-input-ios, .text-input-md {
+            direction: rtl !important;
+          }
+          ion-select{
+            max-width: 100%;
+            color:color($colors,white) !important;
+          }
+          .select-ios .select-placeholder,
+          .select-md .select-placeholder{color:color($colors,white)}
+          .select-ios .select-icon .select-icon-inner,
+          .select-md .select-icon .select-icon-inner{color:color($colors,white);right: 0}
+          .select-md,.select-ios{
+            padding: 9px 0!important;
+            width: 100% !important;
+          }
+          .range-md,range-ios{
+            padding: 0;
+          }
+
+        }
+      }
+    }
+
+    ion-row[id="TabsMain"] {
+      direction: rtl;
+      ion-card {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 25px 0 0 0 !important;
+        background-color: color($colors, white);
+        padding: 15px 0;
+        border-radius: 6px !important;
+
+        ion-icon {
+          color: color($colors, primary);
+          font-size: 2.0em;
+        }
+        .card-title {
+          position: absolute;
+          top: 52%;
+          font-size: 1.0em;
+          width: 100%;
+          font-weight: bold;
+          padding-top: 7px;
+          color: color($colors, dark);
+        }
+      }
+
+    }
+    ion-row[id="Packages"] {
+      ion-col{
+        p.bar{
+          border-bottom: 1px solid color($colors, overlay);
+          margin: 0;
+          color:color($colors, dark) ;
+          span:first-child{
+            font-weight: 600;
+            font-size: 15px;
+          }
+          span:last-child{
+            font-weight: 600;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>{{'register.title' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-6 offset-3 >
+      <input type='file' (change)="readUrl($event)">
+      <img [src]="url">
+    </ion-col>
+
+    <ion-col col-12>
+      <ion-list>
+        <ion-item margin-bottom>
+          <ion-input type="text" [(ngModel)]="profile.username"  full round dir="rtl" placeholder="{{'register.name' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item margin-bottom>
+          <ion-input type="email" [(ngModel)]="profile.mail" [(ngModel)]="user.email" full round dir="rtl" placeholder="{{'register.email' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item margin-bottom>
+          <ion-input type="tel"  [(ngModel)]="profile.mobile" full round dir="rtl" placeholder="{{'register.mobile' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item  margin-bottom>
+          <ion-input type="password" [(ngModel)]="user.password" full round dir="rtl" placeholder="{{'register.password' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item margin-bottom>
+          <ion-input type="password" [(ngModel)]="profile.password" full round dir="rtl" placeholder="{{'register.rePass' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item margin-bottom>
+          <ion-label  stacked>{{'register.country' | translate}}</ion-label>
+          <ion-select dir="rtl" placeholder="المملكه العربيه السعوديه" required [(ngModel)]="country">
+            <ion-option *ngFor="let option of data" [value]="option.value" [innerHTML]="option.text"> </ion-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+      <button ion-button full round (click)="register(user)">{{'register.submit' | translate}}</button>
+    </ion-col>
+  </ion-row>
+</ion-content>

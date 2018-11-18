@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>{{'login.title' | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-12>
+      <img src="./assets/imgs/white_logo.png">
+    </ion-col>
+
+    <ion-col col-12>
+
+      <ion-list>
+        <ion-item margin-bottom>
+          <ion-input type="email" [(ngModel)]="user.email"  full round dir="rtl" placeholder="{{'login.email' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="user.password" full round dir="rtl" placeholder="{{'login.password' | translate}}"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <p text-right  (click)="forget()"><a [href]="">{{'login.forget' | translate}}</a></p>
+
+      <div id="loginBottoms">
+        <button ion-button  round (click)="login(user)">{{'login.login' | translate}}</button>
+        <button ion-button  round color="overlay" (click)="newuser()">{{'login.register' | translate}}</button>
+      </div>
+
+      <p text-center color="danger"> <strong>أو</strong> الدخول عن طريق  </p>
+
+      <div id="socialBottoms">
+        <button (click)="faceLogin()" margin-bottom full round ion-button icon-end>
+          <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+          {{'login.facebook' | translate}}
+        </button>
+
+        <button margin-bottom full  round ion-button icon-end>
+          <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+          {{'login.twitter' | translate}}
+        </button>
+
+        <button margin-bottom full  round ion-button icon-end>
+          <ion-icon ios="logo-google" md="logo-google"></ion-icon>
+          {{'login.google' | translate}}
+        </button>
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-footer>
+  <p text-center>{{'login.copyright'| translate}}</p>
+</ion-footer>

@@ -1,0 +1,11 @@
+page-terms {
+  font-family: 'Cairo', sans-serif !important;
+  background-color: color($colors,light) !important;
+  height: 100vh !important;
+  ion-content {
+    background: url("../../assets/imgs/pattern.png") no-repeat no-repeat left bottom !important;
+    h4,p{
+        color:color($colors,dark);
+    }
+  }
+}

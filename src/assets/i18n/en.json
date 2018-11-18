@@ -1,0 +1,94 @@
+{
+
+  "Page-A":"Main",
+  "Page-B":"Login",
+  "Page-C":"Sign Up",
+  "Page-D":"Reserve Hotels",
+  "Page-E":"Reserve Flight",
+  "Page-F":"Nile Trips",
+  "Page-G":"LocaL Tourism",
+  "Page-H":"Around World",
+  "Page-I":"Best Offers",
+  "Page-Z":"Settings",
+  "Page-X":"SignOut",
+  "toolbar":{
+    "title":"Main Menu"
+  },
+  "login":{
+    "title":"Sign In",
+    "email":"Email",
+    "password":"Password",
+    "forget":"Forget Your Password ?",
+    "login":"Login",
+    "register":"Sign Up",
+    "facebook":"Sign With Facebook",
+    "twitter":"Sign With Twitter",
+    "google":"Sign With Google",
+    "copyright":"Copyright &copy; 2018 Travlines. All Rights Reserved"
+  },
+
+  "register":{
+    "title":"Create Profile",
+    "name":"Name",
+    "email":"Email",
+    "mobile":"Mobile",
+    "password":"Password",
+    "rePass":"Re-Password",
+    "country":"Country",
+    "submit":"Submit"
+  },
+
+  "home":{
+    "search":{
+      "country":"Countries",
+      "city":"Cites",
+      "search":"Search"
+    },
+    "tabs":{
+      "hotels":"Reserve Hotels",
+      "flight":"Reserve Flight",
+      "nile":"Nile Trips",
+      "tourism":"LocaL Tourism",
+      "world":"Around World",
+      "offers":"Best Offers"
+    },
+    "titleBar":{
+      "france":"France",
+      "italy":"Italy",
+      "seeMore":"See More"
+    }
+  },
+
+  "settings":{
+    "title":"setting",
+    "language":"application language",
+    "data":"English",
+    "terms":"terms and conditions",
+    "currency":"currency"
+  },
+  "ReserveHotels":{
+    "title":"Reserve Hotels"
+
+  },
+  "ReserveFlight":{
+    "title":"Reserve Flight"
+
+  },
+  "NileTrips":{
+    "title":"Nile Trips"
+
+  },
+  "LocaLTourism":{
+    "title":"LocaL Tourism"
+
+  },
+  "AroundWorld":{
+    "title":"Around World"
+
+  },
+  "BestOffers":{
+    "title":"Best Offers"
+
+  }
+
+}

@@ -1,0 +1,26 @@
+<ion-menu [content]="content" [attr.side]="this.platform.dir()==='rtl'?'right':'left'">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title text-center> {{ 'toolbar.title' | translate }} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div id="banner">
+    <ion-avatar text-center class="avatar" >
+      <img width="40%" src="../assets/imgs/color_logo.png">
+    </ion-avatar>
+    </div>
+
+    <ion-list id="list_color">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" color="danger"></ion-icon>
+        {{p.title | translate}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

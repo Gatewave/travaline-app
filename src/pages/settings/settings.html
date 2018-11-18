@@ -1,0 +1,51 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title text-center>{{'settings.title' | translate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="backHome()">
+        <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col col-12>
+      <ion-list>
+        <ion-item-group>
+          <button ion-item (click)="changeLanguage()" >
+            <ion-icon  name="ios-switch" item-start color="primary"></ion-icon>
+            <ion-label>{{'settings.language' | translate}}</ion-label>
+            <ion-note item-end>{{'settings.data' | translate}}</ion-note>
+          </button>
+          <button ion-item (click)="terms()">
+            <ion-icon name="ios-book-outline" item-start color="primary"></ion-icon>
+            <ion-label>{{'settings.terms' | translate}}</ion-label>
+          </button>
+          <button ion-item>
+            <ion-icon ios="ios-cash" md="md-cash" item-start color="primary"></ion-icon>
+            <ion-label>{{'settings.currency' | translate}}</ion-label>
+            <ion-select item-end [(ngModel)]="gaming">
+              <ion-option value="nes">Egyptian Pound</ion-option>
+              <ion-option value="n64">United States Dollar</ion-option>
+              <ion-option value="ps">Euro</ion-option>
+            </ion-select>
+          </button>
+
+        </ion-item-group>
+
+      </ion-list>
+
+
+
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,58 @@
+page-forget-pass {
+    font-family: 'Cairo', sans-serif!important;
+    background: url("../../assets/imgs/login.jpg")no-repeat no-repeat right center !important;
+    background-size: cover !important;
+    height: 100vh !important;
+    .header-md::after,
+    .header-ios::after{
+      background-image: none!important;
+    }
+    .toolbar-background-md,
+    .toolbar-background-ios{
+      border-color: transparent!important;
+      background: transparent!important;
+    }
+  .content.content-ios,
+  .content.content-md
+  {
+    background: transparent!important;
+  }
+    ion-content {
+      background: transparent!important;
+      ion-row{
+        ion-col[col-12] {
+
+          p,a{
+            color:color($colors,white) !important;
+            font-weight: 500;
+          }
+
+          div#forgetArea {
+            text-align: center;
+            background:color($colors,overlay) ;
+            border-radius: 6px;
+            ion-list {
+              .text-input {
+                margin: 0 !important;
+              }
+              ion-item, .item-ios {
+                border-radius: 20px;
+                box-shadow: 1px 1px 1px rgba(86, 86, 86, 0.56) !important;
+                font-size: 0.9em !important;
+                min-height: 36px !important;
+                font-weight: 500;
+                ion-input {
+                  direction: rtl !important;
+                }
+
+              }
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+

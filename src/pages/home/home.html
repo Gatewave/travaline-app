@@ -1,0 +1,144 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon ios="ios-menu" name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      <img src="./assets/imgs/white_logo.png">
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentRadioPopover($event) ">
+          <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+    <ion-row id="SearchPro">
+        <ion-col col-6>
+            <ion-list >
+                <ion-item>
+                    <ion-select dir="rtl" placeholder="{{'home.search.country' | translate}}" required [(ngModel)]="country">
+                        <ion-option *ngFor="let info of data" [value]="info.value"  [innerHTML]="info.text"> </ion-option>
+                    </ion-select>
+
+                </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-6>
+            <ion-list>
+                <ion-item>
+                    <ion-select dir="rtl" placeholder="{{'home.search.city' | translate}}" required [(ngModel)]="place">
+                        <ion-option *ngFor="let info of data" [value]="info.value" [innerHTML]="info.text"> </ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+        <ion-col col-12>
+            <ion-list dir="ltr">
+                <ion-item dir="ltr">
+                    <ion-range dualKnobs="true" dir="ltr" [(ngModel)]="structure" (ionChange)="onChange($event)" color="orany">
+                        <ion-label range-left>{{structure.lower}}</ion-label>
+                        <ion-label range-right>{{structure.upper}}</ion-label>
+                    </ion-range>
+                </ion-item>
+            </ion-list>
+
+
+        </ion-col>
+        <ion-col col-6 offset-3>
+            <button ion-button full round color="orany" item-end icon-start>
+                <ion-icon name="search"></ion-icon>
+                {{'home.search.search' | translate}}
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row margin-bottom id="TabsMain">
+        <ion-col col-4>
+            <ion-card (click)="hotels()">
+                <ion-icon ios="ios-home" md="md-home"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.hotels' | translate }} </div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-4>
+            <ion-card (click)="flight()">
+                <ion-icon ios="ios-plane" md="md-plane"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.flight' | translate }} </div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-4>
+            <ion-card (click)="nile()">
+                <ion-icon ios="ios-boat" md="md-boat"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.nile' | translate }} </div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-4>
+            <ion-card (click)="tourism()">
+                <ion-icon ios="ios-pin" md="md-pin"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.tourism' | translate }} </div>
+            </ion-card>
+        </ion-col>
+        <ion-col col-4>
+            <ion-card (click)="world()">
+                <ion-icon ios="ios-globe" md="md-globe"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.world' | translate }} </div>
+            </ion-card>
+        </ion-col>
+
+        <ion-col col-4>
+            <ion-card (click)="offers()">
+                <ion-icon ios="ios-bookmark" md="md-bookmark"></ion-icon>
+                <div class="card-title"> {{ 'home.tabs.offers' | translate }} </div>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+    <ion-row padding-top id="Packages">
+        <ion-col margin-bottom>
+            <p class="bar">
+            <span text-right>{{'home.titleBar.italy' | translate}}</span>
+            <span float-left>{{'home.titleBar.seeMore' | translate}}</span>
+            </p>
+        <ion-slides>
+            <ion-slide *ngFor="let package of packagesA">
+               <ion-card no-padding no-margin>
+                   <img [src]="package.image" class="slide-image"/>
+                   <ion-card-content>
+                       <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>
+                       <p  text-right [innerHTML]="package.description"></p>
+                   </ion-card-content>
+               </ion-card>
+            </ion-slide>
+        </ion-slides>
+        </ion-col>
+
+        <ion-col>
+            <p class="bar">
+                <span float-right text-right>{{'home.titleBar.france' | translate}}</span>
+                <span float-left>{{'home.titleBar.seeMore' | translate}}</span>
+            </p>
+            <ion-slides>
+                <ion-slide *ngFor="let package of packagesB">
+                    <ion-card>
+                        <img [src]="package.image" class="slide-image"/>
+                        <ion-card-content>
+                            <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>
+                            <p  text-right [innerHTML]="package.description"></p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-slide>
+            </ion-slides>
+        </ion-col>
+    </ion-row>
+
+
+
+
+</ion-content>

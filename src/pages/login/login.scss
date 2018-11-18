@@ -1,0 +1,102 @@
+page-login {
+  font-family: 'Cairo', sans-serif!important;
+  background: url("../../assets/imgs/login.jpg")no-repeat no-repeat top left !important;
+  background-size: cover !important;
+  height: 100vh !important;
+  animation-name: backCover;
+  animation-duration: 60s;
+  animation-delay: -2s;
+  animation-iteration-count: infinite;
+
+  @keyframes backCover {
+    0%   {background-position: top left;}
+    25%  {background-position: top right;}
+    50%  {background-position: top left;}
+  }
+
+  .header-md::after,
+  .header-ios::after{
+    background-image: none!important;
+  }
+  .toolbar-background-md,
+  .toolbar-background-ios{
+    border-color: transparent!important;
+    background: transparent!important;
+  }
+  .content.content-ios,
+  .content.content-md
+  {
+    background: transparent!important;
+  }
+
+  ion-content {
+    background: transparent!important;
+    ion-row{
+      ion-col[col-12] {
+        img {
+          display: block !important;
+          margin: 0 auto !important;
+          padding-bottom: 20px !important;
+        }
+        div#loginBottoms{
+          button:nth-child(2){
+            width: 38%!important;
+          }
+          button:nth-child(1) {
+            width: 58%!important;
+          }
+          button:nth-child(1) span, button:nth-child(2) span{
+          justify-content: center !important;
+        }
+        }
+        p,a{
+          color:color($colors,white) !important;
+          font-weight: 500;
+        }
+         ion-list {
+          .text-input {
+            margin: 0 !important;
+          }
+          ion-item, .item-ios {
+            border-radius: 20px;
+            box-shadow: 1px 1px 1px rgba(86, 86, 86, 0.56) !important;
+            font-size: 0.9em !important;
+            min-height: 36px!important;
+            font-weight: 500;
+            ion-input {
+              //direction: rtl !important;
+            }
+
+          }
+        }
+
+        .button-inner{
+          justify-content: flex-start!important;
+
+        }
+
+        [icon-end] ion-icon {
+          padding-right: 0.4em;
+          padding-left: 0.4em;
+        }
+         div#socialBottoms{
+          button:nth-child(1){
+            background:color($social_icon,facebook) !important;
+          }
+          button:nth-child(2){
+            background:color($social_icon,twitter) !important;
+          }
+          button:nth-child(3){
+            background:color($social_icon,google) !important;
+          }
+        }
+      }
+    }
+  }
+  ion-footer{
+    p{
+      color:color($colors,white) !important;
+      font-weight: 500;
+    }
+  }
+}

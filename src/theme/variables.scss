@@ -1,0 +1,146 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+$font-family-base:'Cairo', sans-serif !important;
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+
+$app-direction:multi;
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+        primary:    #905cf6  ,
+        secondary:  #2daae1,
+        danger:     #f141df,
+        orany:      #f0ad4e,
+        light:      #ecf0f1,
+        dark:       rgba(0, 0, 0, 0.8),
+        white:      #fff,
+        grey_text: #797979,
+        overlay:rgba(0, 0, 0, 0.3),
+        overlayApp:rgba(144, 92, 246, 0.7),
+);
+
+
+$rainbow: (
+      pur1: #905cf6,
+      pur2:#bb55d6
+);
+
+$social_icon: (
+        facebook:#4267b2,
+        twitter:#1da1f2,
+        google:#dc5245
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+//App Direction
+$app-direction:multi;
+$app-background: linear-gradient(to right, color($rainbow, pur1) 0%, color($rainbow, pur2) 100%);
+
+//Tool Bar
+.toolbar-background{background: $app-background!important;}
+$toolbar-ios-title-text-color: color($colors,light);
+$toolbar-md-title-text-color: color($colors,light);
+$toolbar-wp-title-text-color: color($colors,light);
+
+//Arrow in side menu item
+$item-ios-detail-push-show:true;
+$item-md-detail-push-show:true;
+$item-wp-detail-push-show:true;
+$item-md-detail-push-color:color($colors,dark);
+$item-ios-detail-push-color:color($colors,dark);
+
+//Bar Button And Inputs
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{color: color($colors,light) !important;}
+.bar-button-default-ios, .bar-button-clear-ios-default, .bar-button-ios-default{color: color($colors,light) !important;}
+$text-input-md-highlight-color: transparent;
+$text-input-placeholder-color:color($colors,grey_text);
+
+//Action Sheet styles
+$action-sheet-ios-group-margin-bottom: 0 !important;
+
+//Action Sheet styles
+$action-sheet-ios-group-margin-bottom: 0 !important;
+$action-sheet-ios-border-radius:20px !important;
+.action-sheet-ios .action-sheet-group:last-child{
+  overflow: hidden !important;
+}
+//$toolbar-ios-height:80px !important;
+$toolbar-ios-height:60px !important;
+.toolbar-ios ion-title{
+  position: relative !important;
+}
+.toolbar-title-ios{
+  overflow: visible!important;
+}
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+//
+@import "roboto";
+@import "noto-sans";
+@import url('https://fonts.googleapis.com/css?family=Cairo');

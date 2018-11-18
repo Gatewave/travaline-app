@@ -1,0 +1,35 @@
+
+
+
+
+<ion-content class="tutorial-page"  padding>
+  <ion-slides pager dir="rtl">
+    <ion-slide *ngFor="let slide of slides">
+        <div class="ring">
+      <img [src]="slide.image"/>
+        </div>
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <h4 [innerHTML]="slide.description"></h4>
+
+      <button class="skip-btn" align-self-center ion-button color="white"  round (click)="Skip()">
+التالى
+        <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+    <ion-slide>
+        <div class="ring">
+        <img src="../../assets/imgs/03.png"/>
+        </div>
+      <ion-grid padding-top>
+        <ion-col col-12>
+          <button ion-button  round icon-right color="white" (click)="goToHome()">
+أبداء الان
+              <ion-icon ios="ios-arrow-forward" md="ios-arrow-forward"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

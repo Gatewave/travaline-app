@@ -1,0 +1,37 @@
+page-settings {
+  font-family: 'Cairo', sans-serif !important;
+  background-color: color($colors,light) !important;
+  height: 100vh !important;
+  ion-content {
+    background: url("../../assets/imgs/pattern.png") no-repeat no-repeat left bottom !important;
+    .item-md,
+    .item-ios{
+      background-color: color($colors,light)!important;
+    }
+    .note-md,.note-ios{
+      color:color($colors,secondary);
+    }
+    ion-select {
+      max-width: 100%;
+    }
+    .select-md .select-icon .select-icon-inner{
+      color: transparent!important;
+      display: none;
+    }
+    .select-md{
+      color:color($colors,secondary)!important;
+    }
+
+    .item-select .label-md{
+      color:color($colors,dark)!important;
+    }
+
+    .label-md,
+    .ion-ios{
+      color:color($colors,dark)!important;
+    }
+
+
+  }
+
+}

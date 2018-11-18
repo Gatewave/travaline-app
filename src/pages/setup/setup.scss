@@ -1,0 +1,77 @@
+page-setup {
+  font-family: 'Cairo', sans-serif!important;
+  background: url("../../assets/imgs/login.jpg") no-repeat no-repeat right top !important;
+  background-size: cover !important;
+  height: 100vh !important;
+  .content.content-ios,
+  .content.content-md
+  {
+    background: transparent!important;
+  }
+
+  .tutorial-page {
+    background-position: center center;
+    background-size: auto 130%;
+    ion-slides {
+      padding: 50px 0 0 0;
+      .swiper-pagination-bullet-active,
+      .swiper-pagination-bullet
+      {
+        background: color($colors,white);
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+
+      .slide-zoom {
+        height: 100%;
+
+        .slide-title {
+          margin-top: 2.8rem;
+          color: color($colors,white);
+        }
+        div.ring {
+          height: 125px;
+          max-width: 125px;
+          margin-top: 100px;
+          border: 2px solid color($colors, white);
+          border-radius: 50%;
+          padding: 18px;
+          display: inline-block;
+          text-align: center;
+
+          img {
+            display: inline-block;
+            text-align: center;
+          }
+        }
+        button {
+          height: 2.4em;
+          font-size: 1.3rem;
+          color: color($colors,dark);
+        }
+
+        b {
+          font-weight: 500;
+        }
+
+        h4{
+          line-height: 1.5!important;
+          font-weight: bold !important;
+          margin: 0 0 15px 0 !important;
+          font-size: 16px!important;
+          color: color($colors,white);
+
+          b {
+            color: color($colors,white);
+          }
+        }
+
+        ion-icon {
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+
+}
