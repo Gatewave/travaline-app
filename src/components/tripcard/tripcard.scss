@@ -1,0 +1,28 @@
+tripcard {
+  .icon_heart{
+    display: inline-block;
+    font-size: 1.4em;
+    position: absolute;
+    right: 18px;
+    top: 30px;
+    width: 30px;
+    color: #ecf0f1;
+    height: 30px;
+    background: #d452c3;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .icon_heart_red{
+    display: inline-block;
+    font-size: 1.4em;
+    position: absolute;
+    right: 18px;
+    top: 30px;
+    width: 30px;
+    color: #ecf0f1;
+    height: 30px;
+    background: red;
+    text-align: center;
+    border-radius: 50%;
+  }
+}

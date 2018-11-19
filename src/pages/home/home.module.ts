@@ -4,10 +4,13 @@ import { HomePage } from './home';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TripcardComponent} from "../../components/tripcard/tripcard";
+
 
 @NgModule({
   declarations: [
     HomePage,
+    TripcardComponent
   ],
   imports: [
     IonicPageModule.forChild(HomePage),

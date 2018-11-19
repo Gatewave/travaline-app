@@ -15,12 +15,12 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {LanguageProvider} from "../providers/language/language";
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
+import { TripdataProvider } from '../providers/tripdata/tripdata';
 
 
 @NgModule({
   declarations: [
-    MyApp,
-
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -28,7 +28,6 @@ import {IonicStorageModule} from "@ionic/storage";
     HttpClientModule,
     IonicModule.forRoot(MyApp),
       IonicStorageModule.forRoot(),
-
       TranslateModule.forRoot({
     loader: {
     provide: TranslateLoader,
@@ -36,7 +35,7 @@ import {IonicStorageModule} from "@ionic/storage";
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
     },
     deps: [HttpClient]
-    }
+      }
     }),
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS),
     AngularFireAuthModule,
@@ -44,8 +43,7 @@ import {IonicStorageModule} from "@ionic/storage";
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-
+    MyApp
   ],
   providers: [
     StatusBar,
@@ -53,6 +51,7 @@ import {IonicStorageModule} from "@ionic/storage";
     LanguageProvider,
     {provide: ErrorHandler,
     useClass: IonicErrorHandler},
+    TripdataProvider,
   ]
 })
 export class AppModule {}

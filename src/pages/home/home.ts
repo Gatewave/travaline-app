@@ -1,15 +1,9 @@
-import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform, PopoverController, ToastController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, Platform, PopoverController, ToastController, LoadingController} from 'ionic-angular';
 import {LanguageProvider} from "../../providers/language/language";
 import {AngularFireAuth} from 'angularfire2/auth';
 import 'rxjs/add/operator/map';
 
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -17,23 +11,8 @@ import 'rxjs/add/operator/map';
   templateUrl: 'home.html',
 })
 export class HomePage {
-    packagesA = [
-        {
-            title: "ايطليا",
-            description: "ايطليا  و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        },
-        {
-            title: "ايطليا",
-            description: "ايطليا  و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        },
-        {
-            title: "ايطليا",
-            description: "ايطليا و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        }
-    ];
+    showheartIcon=true;
+    showheartIconRed =false;
     packagesB = [
         {
             title: "فرنسا",
@@ -53,10 +32,10 @@ export class HomePage {
     ];
     data = [
         {
-        value: 'AF',
-        group: 'A',
-        text: 'Afghanistan'
-    },
+            value: 'AF',
+            group: 'A',
+            text: 'Afghanistan'
+        },
         {
             value: 'AL',
             group: 'A',
@@ -193,62 +172,99 @@ export class HomePage {
     warmth: number = 1300;
     structure: any = {lower: 33, upper: 60};
 
-  constructor(
-      public navCtrl: NavController,
-      public navParams: NavParams,
-      public lang:LanguageProvider,
-      private afAuth : AngularFireAuth,
-      public toast: ToastController,
-      public popoverCtrl: PopoverController,
-      public platform: Platform,
-  ) {
-  }
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public lang: LanguageProvider,
+        private afAuth: AngularFireAuth,
+        public toast: ToastController,
+        public popoverCtrl: PopoverController,
+        public loadingCtrl: LoadingController,
+        public platform: Platform,
+    ) {
+    }
 
-  ionViewDidLoad() {
-      this.afAuth.authState.subscribe(data => {
-          if (data && data.email && data.uid){
-              this.toast.create({
-                  message:`Welcome , ${data.email}`,
-                  duration:3000
-              }).present();
-              // this.profileData = this.afDatabase.object(`profile/${data.uid}`)
+    ionViewDidLoad() {
+        this.afAuth.authState.subscribe(data => {
+            if (data && data.email && data.uid) {
+                this.toast.create({
+                    message: `Welcome , ${data.email}`,
+                    duration: 3000
+                }).present();
+                // this.profileData = this.afDatabase.object(`profile/${data.uid}`)
 
-          } else {
-              this.toast.create({
-                  message:`Wrong Authentication`,
-                  duration:3000
-              }).present();
-          }
-      })
-  }
+            } else {
+                this.toast.create({
+                    message: `Wrong Authentication`,
+                    duration: 3000
+                }).present();
+            }
+        })
+    }
 
     onChange(ev: any) {
         console.log('Changed', ev);
     }
 
-    hotels(){
+    hotels() {
         this.navCtrl.push('HotelsPage');
     }
 
-    flight(){
+    flight() {
         this.navCtrl.push('FlightPage');
     }
-    nile(){
+
+    nile() {
         this.navCtrl.push('NilePage');
     }
-    tourism(){
+
+    tourism() {
         this.navCtrl.push('TourismPage');
     }
-    world(){
+
+    world() {
         this.navCtrl.push('WorldPage');
     }
-    offers(){
+
+    offers() {
         this.navCtrl.push('OffersPage');
     }
+
     presentRadioPopover(ev: UIEvent) {
-        let popover = this.popoverCtrl.create('AccountPage', {},{cssClass: 'hamada'});
+        let popover = this.popoverCtrl.create('AccountPage', {}, {cssClass: 'hamada'});
         popover.present({
             ev: ev
         });
     }
+
+    setWishlistTrue(id){
+        this.showheartIconRed = true;
+        this.showheartIcon = false;
+        this.toast.create({
+            message: 'تم إضافة المقالة الى المفضلة',
+            duration: 3000,
+            position: 'bottom',
+        }).present();
+
+    }
+
+    setWishlistFalse(id){
+        this.showheartIconRed = false;
+        this.showheartIcon = true;
+        this.toast.create({
+            message: 'تم إزالة المقالة الى المفضلة',
+            duration: 3000,
+            position: 'bottom'
+        }).present();
+    }
+
+    search() {
+        const loader = this.loadingCtrl.create({
+            content: "جارى البحث ..",
+            duration: 3000
+        });
+        loader.present();
+        this.navCtrl.push('HomePage')
+    }
+
 }

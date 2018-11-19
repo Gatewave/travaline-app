@@ -105,23 +105,41 @@ page-home {
           a{
             font-weight: 600;
             font-size: 11px;
+            text-decoration: none;
           }
         }
+
+        .icon_heart{
+          display: inline-block;
+          font-size: 1.4em;
+          position: absolute;
+          right: 18px;
+          top: 30px;
+          width: 30px;
+          color: #ecf0f1;
+          height: 30px;
+          background: #d452c3;
+          text-align: center;
+          border-radius: 50%;
+        }
+        .icon_heart_red{
+          display: inline-block;
+          font-size: 1.4em;
+          position: absolute;
+          right: 18px;
+          top: 30px;
+          width: 30px;
+          color: #ecf0f1;
+          height: 30px;
+          background: red;
+          text-align: center;
+          border-radius: 50%;
+        }
+
       }
     }
-    ion-icon[ios="ios-heart"] {
-      display: inline-block;
-      font-size: 1.6em;
-      position: absolute;
-      right: 18px;
-      top: 30px;
-      padding: 5px;
-      width: 30px;
-      color: #ecf0f1;
-      height: 30px;
-      background: #d452c3;
-      text-align: center;
-      border-radius: 50%;
-    }
+
   }
+
+
 }
