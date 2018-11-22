@@ -1,28 +1,30 @@
 tripcard {
-  .icon_heart{
-    display: inline-block;
-    font-size: 1.4em;
-    position: absolute;
-    right: 18px;
-    top: 30px;
-    width: 30px;
-    color: #ecf0f1;
-    height: 30px;
-    background: #d452c3;
-    text-align: center;
-    border-radius: 50%;
-  }
-  .icon_heart_red{
-    display: inline-block;
-    font-size: 1.4em;
-    position: absolute;
-    right: 18px;
-    top: 30px;
-    width: 30px;
-    color: #ecf0f1;
-    height: 30px;
-    background: red;
-    text-align: center;
-    border-radius: 50%;
-  }
-}
+      ion-card {
+        .icon_heart {
+          display: inline-block!important;
+          font-size: 1.4em!important;
+          position: absolute!important;
+          right: 18px!important;
+          top: 30px!important;
+          width: 30px!important;
+          color: #ecf0f1!important;
+          height: 30px!important;
+          background: #d452c3!important;
+          text-align: center!important;
+          border-radius: 50%!important;
+        }
+        .icon_heart_red {
+          display: inline-block!important;
+          font-size: 1.4em!important;
+          position: absolute!important;
+          right: 18px!important;
+          top: 30px!important;
+          width: 30px!important;
+          color: #ecf0f1!important;
+          height: 30px!important;
+          background: red!important;
+          text-align: center!important;
+          border-radius: 50%!important;
+        }
+      }
+    }

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams, Platform, PopoverController, ToastController, LoadingController} from 'ionic-angular';
 import {LanguageProvider} from "../../providers/language/language";
+import {TripdataProvider} from "../../providers/tripdata/tripdata";
 import {AngularFireAuth} from 'angularfire2/auth';
 import 'rxjs/add/operator/map';
 
@@ -11,25 +12,6 @@ import 'rxjs/add/operator/map';
   templateUrl: 'home.html',
 })
 export class HomePage {
-    showheartIcon=true;
-    showheartIconRed =false;
-    packagesB = [
-        {
-            title: "فرنسا",
-            description: "فرنسا  و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        },
-        {
-            title: "فرنسا",
-            description: "فرنسا  و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        },
-        {
-            title: "فرنسا",
-            description: "فرنسا و جولات مميزه ليالى 3",
-            image: "assets/imgs/italy.jpg",
-        }
-    ];
     data = [
         {
             value: 'AF',
@@ -181,6 +163,7 @@ export class HomePage {
         public popoverCtrl: PopoverController,
         public loadingCtrl: LoadingController,
         public platform: Platform,
+        public _Data: TripdataProvider
     ) {
     }
 
@@ -237,34 +220,13 @@ export class HomePage {
         });
     }
 
-    setWishlistTrue(id){
-        this.showheartIconRed = true;
-        this.showheartIcon = false;
-        this.toast.create({
-            message: 'تم إضافة المقالة الى المفضلة',
-            duration: 3000,
-            position: 'bottom',
-        }).present();
-
-    }
-
-    setWishlistFalse(id){
-        this.showheartIconRed = false;
-        this.showheartIcon = true;
-        this.toast.create({
-            message: 'تم إزالة المقالة الى المفضلة',
-            duration: 3000,
-            position: 'bottom'
-        }).present();
-    }
-
     search() {
         const loader = this.loadingCtrl.create({
             content: "جارى البحث ..",
             duration: 3000
         });
         loader.present();
-        this.navCtrl.push('HomePage')
+        this.navCtrl.push('SearchresultsPage')
     }
 
 }

@@ -92,7 +92,10 @@
   "BestOffers":{
     "title":"افضل العروض"
 
-  }
+  },
+  "SearchResults":{
+        "title":"نتائج البحث"
+    }
 
 
 }

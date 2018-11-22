@@ -1,7 +1,4 @@
-
-<ion-slides>
-    <ion-slide *ngFor="let package of packagesA">
-    <ion-card>
+    <ion-card (click)="openPost(post)">
       <div class="icon_heart" *ngIf="showheartIcon">
         <ion-icon name="heart" (click)="setWishlistTrue();" class="heart"></ion-icon>
       </div>
@@ -9,11 +6,9 @@
         <ion-icon name="heart" (click)="setWishlistFalse();" class="heart"></ion-icon>
       </div>
 
-      <img [src]="package.image" class="slide-image"/>
+      <img [src]="post.image" class="slide-image"/>
       <ion-card-content>
-        <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>
-        <p  text-right [innerHTML]="package.description"></p>
+        <h2 text-right class="slide-title" [innerHTML]="post.title"></h2>
+        <p  text-right [innerHTML]="post.description"></p>
       </ion-card-content>
     </ion-card>
-    </ion-slide>
-</ion-slides>

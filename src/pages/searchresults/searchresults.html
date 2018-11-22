@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>{{'SearchResults.title'| translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-col col-12>
+
+
+    <ion-card *ngFor="let post of posts">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="post.picture.large" />
+        </ion-avatar>
+        <h2>
+          <span [innerHTML]="post.name.title"></span>
+          <span [innerHTML]="post.name.first"></span>
+          <span [innerHTML]="post.name.last"></span>
+        </h2>
+        <p [innerHTML]="post.dob.date">November 5, 1955</p>
+      </ion-item>
+
+      <img [src]="post.picture.large" />
+
+      <ion-card-content>
+        <p></p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 Likes</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+
+  </ion-col>
+
+</ion-content>

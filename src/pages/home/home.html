@@ -107,7 +107,11 @@
             <h2>{{'home.titleBar.italy' | translate}}</h2>
             <a href="#">{{'home.titleBar.seeMore' | translate}}</a>
             </div>
-            <tripcard></tripcard>
+            <ion-slides direction="horizontal" [pager]="true" dir="rtl">
+                <ion-slide  *ngFor="let post of _Data.getItaly()">
+                    <tripcard [post]="post" [showButton]="false"></tripcard>
+                </ion-slide>
+            </ion-slides>
         </ion-col>
 
         <ion-col>
@@ -115,23 +119,12 @@
                 <h2>{{'home.titleBar.france' | translate}}</h2>
                 <a  href="#">{{'home.titleBar.seeMore' | translate}}</a>
             </div>
-            <ion-slides>
-                <ion-slide *ngFor="let package of packagesB">
-                    <ion-card>
-                        <div class="icon_heart" *ngIf="showheartIcon">
-                            <ion-icon name="heart" (click)="setWishlistTrue();" class="heart"></ion-icon>
-                        </div>
-                        <div class="icon_heart_red" *ngIf="showheartIconRed">
-                            <ion-icon name="heart" (click)="setWishlistFalse();" class="heart"></ion-icon>
-                        </div>
-                        <img [src]="package.image" class="slide-image"/>
-                        <ion-card-content>
-                            <h2 text-right class="slide-title" [innerHTML]="package.title"></h2>
-                            <p  text-right [innerHTML]="package.description"></p>
-                        </ion-card-content>
-                    </ion-card>
+            <ion-slides direction="horizontal" [pager]="true" dir="rtl">
+                <ion-slide  *ngFor="let post of _Data.getFrance()">
+                    <tripcard [post]="post" [showButton]="false"></tripcard>
                 </ion-slide>
             </ion-slides>
         </ion-col>
     </ion-row>
+
 </ion-content>

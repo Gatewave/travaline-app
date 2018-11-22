@@ -89,6 +89,9 @@
   "BestOffers":{
     "title":"Best Offers"
 
+  },
+  "SearchResults":{
+    "title":"Search Results"
   }
 
 }

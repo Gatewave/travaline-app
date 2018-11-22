@@ -45,6 +45,7 @@ export class MyApp {
           { title: 'Page-G', component: 'TourismPage', icon:'ios-pin'},
           { title: 'Page-H', component: 'WorldPage', icon:'ios-globe'},
           { title: 'Page-I', component: 'OffersPage', icon:'ios-bookmark'},
+          { title: 'Page-I', component: 'FavoritePage', icon:'ios-heart'},
           { title: 'Page-Z', component: 'SettingsPage', icon:'ios-cog'},
           { title: 'Page-X', component: 'LoginPage', icon:'ios-log-out'}
 
